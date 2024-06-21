@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/kenser11547/mi-aplicacion.git'
+            }
+        }
+        
+        stage('Build and Test') {
+            steps {
+                script {
+                    docker.build('mi-aplicacion')
+                    docker.image('mi-aplicacion').run()
+                    sh 'npm install'
+                    sh 'npm test'
+                }
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                script {
+                    docker.image('mi-aplicacion').push()
+                }
+            }
+        }
+    }
+}
