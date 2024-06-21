@@ -63,18 +63,3 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-
-/* Ocultar mensaje de agradecimiento por defecto */
-.hidden {
-    display: none;
-}
-
-/* Animaciones */
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
