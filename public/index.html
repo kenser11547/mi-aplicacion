@@ -8,12 +8,20 @@
 </head>
 <body>
     <div class="container">
-        <h1>BIENVENIDOS A PORFAVOR INGRESAR SUS DATOS</h1>
+        <h1>BIENVENIDOS A MI APLICACION PARA DEVOPS</h1>
         <form action="/submit" method="post">
-            <label for="name">Numero de tarjeta:</label>
+            <label for="name">Nombre:</label>
             <input type="text" id="name" name="name" required>
-            <label for="message">Codigo de seguridad:</label>
-            <textarea id="message" name="message" required></textarea>
+
+            <label for="cardNumber">Número de Tarjeta:</label>
+            <input type="text" id="cardNumber" name="cardNumber" required>
+
+            <label for="expiryDate">Fecha de Vencimiento:</label>
+            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/AA" required>
+
+            <label for="securityCode">Código de Seguridad:</label>
+            <input type="text" id="securityCode" name="securityCode" required>
+
             <button type="submit">Enviar</button>
         </form>
     </div>
