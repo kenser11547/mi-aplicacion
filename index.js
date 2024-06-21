@@ -9,9 +9,9 @@ const port = 8080;
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Ruta principal, por ejemplo para servir una página estática
+// Ruta principal para servir la página estática
 app.get('/', (req, res) => {
-  res.send('Servidor Node.js corriendo correctamente!');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Ruta para manejar el formulario POST
@@ -19,7 +19,7 @@ app.post('/submit', (req, res) => {
   const { name, message } = req.body;
   console.log('Recibida solicitud POST en la ruta /submit');
   console.log('Datos recibidos:', name, message);
-  res.send(`<h1>Gracias, ${name}</h1><p>Tu mensaje: ${message}</p>`);
+  res.send(`<h1>Gracias, ${name}</h1><p>Tu mensaje: ${message}</p><button onclick="window.history.back()">Regresar</button>`);
 });
 
 // Escucha en el puerto especificado
