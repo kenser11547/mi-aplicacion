@@ -70,7 +70,7 @@ app.post('/submit', (req, res) => {
     <body>
       <div class="container">
         <h1>Gracias, ${name}</h1>
-        <p>Tu mensaje: ${message}</p>
+        <p>POR TU RESPUESTA: ${message}</p>
         <button onclick="window.history.back()">Regresar</button>
       </div>
     </body>
